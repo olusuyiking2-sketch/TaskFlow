@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+
+    <div class="logo">
+        TaskFlow
+    </div>
+
+
+    <div class="nav-user">
+
+        <span>
+            Welcome, {{ username }}
+        </span>
+
+
+        <a href="/logout">
+            Logout
+        </a>
+
+    </div>
+
+
+</nav>
+
+
+    <hr>
+
+
+    <div class="add-task glass">
+
+    <h2>
+        Add New Task
+    </h2>
+
+
+    <form action="/add_task" method="POST">
+
+        <input type="hidden" name="csrf_token" value="{{ csrf_token()}}">
+
+
+        <input 
+            type="text" 
+            name="title"
+            placeholder="Task title"
+            required
+        >
+
+
+        <br>
+
+
+        <textarea
+            name="description"
+            placeholder="Task description">
+        </textarea>
+
+
+        <br>
+
+
+        <button type="submit">
+    Add Task
+</button>
+
+</form>
+
+</div>
+
+
+    <hr>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h2>Your Tasks</h2>
+     </div>
+
+    <div class="task-filters">
+     <a href="/dashboard">All</a>
+     <a href="/dashboard?status=Pending">Pending</a>
+<a href="/dashboard?status=Completed">Completed</a>
+    </div>
+
+    <div class="tasks-grid">
+
+   {% if tasks %}
+
+{% for task in tasks %}
+
+
+    <div class="task-card glass">
+
+
+        <h3>
+            {{ task["title"] }}
+        </h3>
+
+
+        <p>
+            {{ task["description"] }}
+        </p>
+
+
+        
+
+            <span class="status 
+{% if task['status'] == 'Pending' %}
+status-pending
+{% else %}
+status-completed
+{% endif %}
+">
+
+{{ task["status"] }}
+
+</span>
+
+            
+
+
+<div class="task-actions">
+
+        <a href="/complete/{{ task['id'] }}">
+            Mark Complete
+        </a>
+
+
+        <a href="/delete/{{ task['id'] }}"
+onclick="return confirmDelete()">Delete
+</a>
+
+
+        
+        <a href="/edit_task/{{ task['id'] }}">Edit</a>
+
+        </div>
+
+       
+
+    </div>
+
+       
+
+
+
+
+    {% endfor %}
+
+    {% else %}
+
+<div class="glass empty-state">
+
+    <h3>No tasks yet</h3>
+
+    <p>
+        Add your first task and start organizing your work.
+    </p>
+
+</div>
+
+{% endif %}
+
+     </div>
+
+</div> 
+
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+
+</html>
