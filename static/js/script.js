@@ -1,37 +1,39 @@
-function typeEffect() {
-
-    if(index < text.length) {
-
-        document.getElementById("typing-text").innerHTML += text.charAt(index);
-
-        index++;
-
-        setTimeout(typeEffect, 80);
-
-    }
-
-}
-
-
-window.onload = typeEffect;
-
-const text = "Manage your tasks. Stay organized.";
+const text = "Manage Your Tasks Smarter";
 
 let index = 0;
 
 function typeEffect() {
 
+    const element = document.getElementById("typing-text");
+
+    if (!element) return;
+
     if (index < text.length) {
 
-        document.getElementById("typing-text").innerHTML += text.charAt(index);
+        element.textContent += text.charAt(index);
 
         index++;
 
         setTimeout(typeEffect, 80);
 
+    } else {
+
+        element.classList.add("finished");
+
     }
 
 }
 
+window.addEventListener("load", () => {
 
-window.onload = typeEffect;
+    const element = document.getElementById("typing-text");
+
+    if (element) {
+
+        element.textContent = "";
+
+        typeEffect();
+
+    }
+
+});

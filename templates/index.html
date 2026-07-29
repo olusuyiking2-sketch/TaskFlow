@@ -1,115 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Student Task Manager</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
 
 <body>
+
+
     <nav class="navbar">
 
-    <h1 class="logo">TaskFlow</h1>
+        <div class="logo">
+            TaskFlow
+        </div>
 
-    <div class="nav-links">
-        <a href="/register">Get Started</a>
-     <a href="/login">Login</a>
-     </div>
+
+        <div class="nav-links">
+
+            <a href="/register">
+                Get Started
+            </a>
+
+
+            <a href="/login">
+                Login
+            </a>
+
+        </div>
 
     </nav>
 
+
+
     <section class="hero">
+
 
         <div class="hero-content">
 
-            <h1 class="hero-title">
-                <span id="typing-text"></span>
-            </h1>
 
-             <p class="hero-text">
-            TaskFlow helps students and individuals create,
-            track, and complete tasks efficiently.
-        </p>
+            <h1 id="typing-text" class="hero-title"></h1>
+
+            <p class="hero-text">
+
+                TaskFlow helps students and individuals
+                create, organize, track, and complete
+                tasks efficiently.
+
+            </p>
 
 
-    </div>
+            <a href="/register" class="btn">
+                Create Free Account
+            </a>
 
-        </section>
 
-     
+        </div>
+
+
+    </section>
+
+
+
+
     <section id="features">
 
 
-<div class="feature-card glass">
-
-<h3>
-Task Management
-</h3>
-
-<p>
-Create, edit, delete, and organize your tasks.
-</p>
-
-</div>
+        <div class="feature-card">
 
 
+            <h3>
+                Task Management
+            </h3>
 
-<div class="feature-card glass">
 
-<h3>
-Progress Tracking
-</h3>
+            <p>
+                Create, edit, delete, and organize your tasks easily.
+            </p>
 
-<p>
-Track pending and completed tasks easily.
-</p>
 
-</div>
+        </div>
 
 
 
-<div class="feature-card glass">
-
-<h3>
-Secure Accounts
-</h3>
-
-<p>
-Your tasks are stored safely under your account.
-</p>
-
-</div>
+        <div class="feature-card">
 
 
-</section>
+            <h3>
+                Progress Tracking
+            </h3>
 
-<section class="cta">
+
+            <p>
+                Track pending and completed tasks to stay productive.
+            </p>
+
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+
+            <h3>
+                Secure Accounts
+            </h3>
+
+
+            <p>
+                Your tasks are stored safely under your personal account.
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <section class="cta">
+
 
         <h2>
-            Ready to take control of your tasks ?
+            Ready to take control of your tasks?
         </h2>
 
+
         <p>
-             Start organizing your work and stay productive with TaskFlow.
+            Start organizing your daily activities with TaskFlow.
         </p>
-    
 
-    <a href="/register" class="primary-btn">
-       Create Free Account
-   </a>
 
-</section>
+        <a href="/register">
+            Get Started
+        </a>
+
+
+    </section>
+
+
+
 
     <footer>
+
         &copy; 2026 TaskFlow. All rights reserved.
+
     </footer>
 
 
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-
-
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>

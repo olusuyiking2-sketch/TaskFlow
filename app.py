@@ -11,7 +11,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-app.secret_key = os.environ.get("SECRET_KEY")
+app.secret_key = os.environ.get("secret_key")
 
 csrf = CSRFProtect(app)
 
@@ -368,4 +368,4 @@ create_tables()
 
 if __name__ == "__main__":
 
-    app.run()
+    app.run(debug=True)

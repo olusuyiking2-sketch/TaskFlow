@@ -1,19 +1,97 @@
-<h2>Edit Task</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<form method="POST">
+<head>
 
-    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <meta charset="UTF-8">
 
-    <input 
-        type="text" 
-        name="title" 
-        value="{{ task[2] }}"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <textarea name="description">{{ task[3] }}</textarea>
+    <title>Edit Task - TaskFlow</title>
 
-    <button type="submit">
-        Save Changes
-    </button>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-</form>
+</head>
+
+
+<body>
+
+
+    <nav class="navbar">
+
+        <div class="logo">
+            TaskFlow
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+
+            <a href="/logout">
+                Logout
+            </a>
+
+        </div>
+
+
+    </nav>
+
+
+
+
+
+    <section class="edit-container glass">
+
+
+        <h1>
+            Edit Task
+        </h1>
+
+
+
+
+        <form method="POST">
+
+             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+
+            <input
+                type="text"
+                name="title"
+                value="{{ task['title'] }}"
+                placeholder="Task title"
+                required
+            >
+
+
+
+            <textarea
+                name="description"
+                placeholder="Task description"
+            >{{ task['description'] }}</textarea>
+
+
+
+
+            <button type="submit">
+                Update Task
+            </button>
+
+
+
+        </form>
+
+
+
+
+    </section>
+
+
+
+</body>
+
+</html>
