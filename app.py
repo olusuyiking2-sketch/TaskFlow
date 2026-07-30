@@ -65,10 +65,20 @@ def create_tables():
             description TEXT,
             status TEXT NOT NULL,
             created_at TEXT NOT NULL,
+            due_date DATETIME,
             FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
         )
         """
     )
+
+    try:
+        cursor.execute("""
+            ALTER TABLE tasks
+            ADD COLUMN due_date DATETIME
+        """)
+        print("due_date column added.")
+    except sqlite3.OperationalError:
+        print("due_date column already exists.")
 
     connection.commit()
     connection.close()
