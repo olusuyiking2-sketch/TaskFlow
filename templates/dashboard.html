@@ -15,6 +15,9 @@
 
 
 <body>
+    <div class="particles"></div>
+    <div class="dashboard-container"></div>
+
 
 
     <nav class="navbar">
@@ -114,7 +117,8 @@
                     placeholder="Task description">
                 </textarea>
 
-
+       <label for="due_date">Due Date & Time</label>
+                <input type="datetime-local" name="due_date" id="due_date">
 
                 <button type="submit">
                     Add Task
@@ -167,7 +171,7 @@
 
 
 
-                <div class="task-card glass">
+                <div class="task-card glass {% if task['is_overdue'] %}overdue{% endif %}">
 
 
                     <h3>
@@ -181,6 +185,17 @@
                     </p>
 
 
+                   {% if task["due_date"] %}
+                    <p class="due-date">
+                     📅 Due: {{ task["due_date"] }}
+                    </p>
+                         {% endif %}
+
+             {% if task["is_overdue"] %}
+             <span class="overdue-badge">
+                     ⚠️ Overdue
+                       </span>
+                 {% endif %}
 
                     {% if task["status"] == "Completed" %}
 
@@ -263,12 +278,16 @@
 
         </section>
 
+        
+
 
 
     </main>
 
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
 </body>
 
 </html>

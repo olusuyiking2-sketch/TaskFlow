@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf.csrf import CSRFProtect
 from dotenv import load_dotenv
 import os
+from datetime import date, datetime
 
 load_dotenv()
 
@@ -188,7 +189,18 @@ def dashboard():
             (session["user_id"],)
         )
 
-    tasks = cursor.fetchall()
+    tasks = [dict(task) for task in cursor.fetchall()]
+
+    for task in tasks:
+        if task["due_date"]:
+            due_date = datetime.strptime(
+                task["due_date"], "%Y-%m-%dT%H:%M"
+            )
+
+            if due_date < datetime.now():
+                task["is_overdue"] = True
+            else:
+                task["is_overdue"] = False
 
     connection.close()
 
@@ -207,6 +219,7 @@ def add_task():
 
     title = request.form["title"].strip()
     description = request.form["description"].strip()
+    due_date = request.form.get("due_date")
 
     if not title:
         flash("Task title is required.")
@@ -217,13 +230,14 @@ def add_task():
 
     cursor.execute(
         """
-        INSERT INTO tasks(user_id, title, description, status, created_at)
-        VALUES(?,?,?,?, CURRENT_TIMESTAMP)
+        INSERT INTO tasks(user_id, title, description, due_date, status, created_at)
+        VALUES(?,?,?,?,?, CURRENT_TIMESTAMP)
         """,
         (
             session["user_id"],
             title,
             description,
+            due_date,
             "Pending"
         )
     )

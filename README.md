@@ -6,32 +6,32 @@ TaskFlow is a modern task management web application built with **Flask** that h
 
 ## ✨ Features
 
-* User registration and login
-* Secure password hashing
-* CSRF protection
-* Session-based authentication
-* Create new tasks
-* Edit existing tasks
-* Mark tasks as completed
-* Delete tasks with confirmation
-* Filter tasks by status
-* Responsive design for desktop and mobile
-* Modern and minimal user interface
+- User registration and login
+- Secure password hashing
+- CSRF protection
+- Session-based authentication
+- Create new tasks
+- Edit existing tasks
+- Mark tasks as completed
+- Delete tasks with confirmation
+- Filter tasks by status
+- Responsive design for desktop and mobile
+- Modern and minimal user interface
 
 ---
 
 ## 🛠️ Built With
 
-* Python
-* Flask
-* SQLite
-* HTML5
-* CSS3
-* JavaScript
-* Flask-WTF
-* Werkzeug
-* Gunicorn
-* Python Dotenv
+- Python
+- Flask
+- SQLite
+- HTML5
+- CSS3
+- JavaScript
+- Flask-WTF
+- Werkzeug
+- Gunicorn
+- Python Dotenv
 
 ---
 
@@ -131,10 +131,10 @@ http://127.0.0.1:5000
 
 TaskFlow includes several security best practices:
 
-* Password hashing using Werkzeug
-* CSRF protection using Flask-WTF
-* Session-based authentication
-* Secret key stored in environment variables
+- Password hashing using Werkzeug
+- CSRF protection using Flask-WTF
+- Session-based authentication
+- Secret key stored in environment variables
 
 ---
 
@@ -142,34 +142,32 @@ TaskFlow includes several security best practices:
 
 The application is optimized for:
 
-* Desktop
-* Tablet
-* Mobile devices
-
-
+- Desktop
+- Tablet
+- Mobile devices
 
 ## 🌐 Live Demo
 
 **Live Website**
 
 ```
-
+https://taskflow-xrlp.onrender.com
 ```
 
 ---
 
 ## 📈 Future Improvements
 
-* Task search
-* Due dates
-* Categories
-* Priority levels
-* User profile
-* Dark/Light mode toggle
-* Email verification
-* Password reset
-* Notifications
-* Dashboard analytics
+- Task search
+- Due dates
+- Categories
+- Priority levels
+- User profile
+- Dark/Light mode toggle
+- Email verification
+- Password reset
+- Notifications
+- Dashboard analytics
 
 ---
 
@@ -180,10 +178,6 @@ The application is optimized for:
 Software Engineering Student
 
 Backend-focused Full-Stack Developer
-
-
-
-
 
 ## 📄 License
 
