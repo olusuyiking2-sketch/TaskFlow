@@ -59,4 +59,71 @@ It helps users organize, track, and manage their tasks with authentication, dead
 
 
 ## Project Structure
+TaskFlow/
+│
+├── app.py
+├── migration.py
+├── requirements.txt
+├── README.md
+│
+├── static/
+│ ├── css/
+│ ├── js/
+│ └── images/
+│
+├── templates/
+│
+└── screenshots/
+├── landing-page.png
+├── login.png
+├── dashboard.png
+└── mobile-view.png
 
+
+---
+
+## Running Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/olusuyiking2-sketch/TaskFlow.git
+
+Navigate into the project:
+
+cd TaskFlow
+
+Create a virtual environment:
+
+python -m venv venv
+
+Activate it:
+
+Windows:
+
+venv\Scripts\activate
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run the application:
+
+python app.py
+Future Improvements 🚀
+Task reminders and push notifications
+Task priority levels
+Email notifications
+Advanced analytics dashboard
+API integration
+Author
+
+Built by King Olusuyi
+
+
+After saving:
+
+```bash
+git add README.md
+git commit -m "Update README with project documentation and screenshots"
+git push
