@@ -1,186 +1,129 @@
-# TaskFlow 📝
+# TaskFlow 🚀
 
-TaskFlow is a modern task management web application built with **Flask** that helps users organize, track, and manage their daily tasks. It provides a secure authentication system, an intuitive dashboard, and a clean, responsive interface that works across desktop and mobile devices.
+TaskFlow is a full-stack task management web application built with **Flask**.  
+It helps users organize, track, and manage their tasks with authentication, deadlines, and status tracking.
 
----
-
-## ✨ Features
+## Features ✨
 
 - User registration and login
 - Secure password hashing
-- CSRF protection
 - Session-based authentication
-- Create new tasks
-- Edit existing tasks
-- Mark tasks as completed
-- Delete tasks with confirmation
-- Filter tasks by status
-- Responsive design for desktop and mobile
-- Modern and minimal user interface
+- Create, read, update, and delete (CRUD) tasks
+- Task status management
+- Task filtering (Pending / Completed)
+- Due date and time support
+- Automatic overdue task detection
+- Responsive user interface
+- Animated particle background
+- Deployed production application
 
 ---
 
-## 🛠️ Built With
+## Tech Stack 🛠️
 
+### Backend
 - Python
 - Flask
 - SQLite
-- HTML5
-- CSS3
+
+### Frontend
+- HTML
+- CSS
 - JavaScript
-- Flask-WTF
-- Werkzeug
-- Gunicorn
-- Python Dotenv
+- Jinja2 Templates
+
+### Deployment
+- Render
 
 ---
 
-## 📂 Project Structure
+## Screenshots 📸
 
-```text
+### Landing Page
+
+![Landing Page](screenshots/landing-page.png)
+
+---
+
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+---
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+
+## Project Structure
 TaskFlow/
 │
 ├── app.py
-├── database.db
+├── migration.py
 ├── requirements.txt
-├── Procfile
-├── .env
+├── README.md
 │
 ├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│   └── images/
+│ ├── css/
+│ ├── js/
+│ └── images/
 │
 ├── templates/
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── edit.html
-│   ├── 404.html
-│   └── 500.html
 │
-└── README.md
-```
+└── screenshots/
+├── landing-page.png
+├── login.png
+├── dashboard.png
+└── mobile-view.png
+
 
 ---
 
-## 🚀 Installation
+## Running Locally
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/TaskFlow.git
-```
-
-### 2. Navigate into the project
+Clone the repository:
 
 ```bash
+git clone https://github.com/olusuyiking2-sketch/TaskFlow.git
+
+Navigate into the project:
+
 cd TaskFlow
-```
 
-### 3. Create a virtual environment
+Create a virtual environment:
 
-```bash
 python -m venv venv
-```
 
-### 4. Activate the virtual environment
+Activate it:
 
-**Windows**
+Windows:
 
-```bash
 venv\Scripts\activate
-```
 
-**macOS/Linux**
+Install dependencies:
 
-```bash
-source venv/bin/activate
-```
-
-### 5. Install dependencies
-
-```bash
 pip install -r requirements.txt
-```
 
-### 6. Create a `.env` file
+Run the application:
 
-```env
-SECRET_KEY=your_secret_key_here
-```
+python app.py
+Future Improvements 🚀
+Task reminders and push notifications
+Task priority levels
+Email notifications
+Advanced analytics dashboard
+API integration
+Author
 
-### 7. Run the application
+Built by King Olusuyi
+
+
+After saving:
 
 ```bash
-python app.py
-```
-
-Open your browser and visit:
-
-```
-http://127.0.0.1:5000
-```
-
----
-
-## 🔐 Security
-
-TaskFlow includes several security best practices:
-
-- Password hashing using Werkzeug
-- CSRF protection using Flask-WTF
-- Session-based authentication
-- Secret key stored in environment variables
-
----
-
-## 📱 Responsive Design
-
-The application is optimized for:
-
-- Desktop
-- Tablet
-- Mobile devices
-
-## 🌐 Live Demo
-
-**Live Website**
-
-```
-https://taskflow-xrlp.onrender.com
-```
-
-
-
-## 📈 Future Improvements
-
-- Task search
-- Due dates
-- Categories
-- Priority levels
-- User profile
-- Dark/Light mode toggle
-- Email verification
-- Password reset
-- Notifications
-- Dashboard analytics
-
----
-
-## 👨‍💻 Author
-
-**King Olusuyi**
-
-Software Engineering Student
-
-Backend-focused Full-Stack Developer
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-Feel free to use, modify, and learn from this project.
+git add README.md
+git commit -m "Update README with project documentation and screenshots"
+git push
